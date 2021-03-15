@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter as Router,Link} from "react-router-dom";
 export default function Header() {
     return (
-      
+      <Router>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <Link to="/" className="navbar-brand" >News
   </Link>
@@ -22,7 +22,7 @@ export default function Header() {
     </ul>
   </div>
   </nav>
- 
+ </Router>
     )
 }
 
