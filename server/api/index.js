@@ -11,14 +11,9 @@ app.use('/auth/v1', require('./auth'));
 
 if(enableAuth) {
   const authorize = require('./auth/authorize');
-  //authorize(['news:all', 'news:read'])
+  
   app.get('/api/v1/news(|/*)',authorize(['news:all', 'news:read']))
- //  app.get('/api/v1/notes(|/*)', authorize(['notes:all', 'notes:read']));
-  // // app.get('/api/v1/notes(|/*)');
-  // app.post('/api/v1/notes(|*)', authorize(['notes:all', 'notes:read']));
-  // app.put('/api/v1/notes(|*)', authorize(['notes:all', 'notes:edit']));
-  // app.delete('/api/v1/notes(|*)', authorize(['notes:all', 'notes:edit']));
-  // // app.patch('/api/v1/notes(|*)', authorize(['notes:all', 'notes:write']));
+ 
 }
 
 app.use('/api/v1', router);

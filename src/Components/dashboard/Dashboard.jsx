@@ -1,14 +1,13 @@
 import axios from 'axios';
 import React,{useState,useEffect} from 'react';
 import Card from '../card/Card';
-// import Card from './card/Card';
 export default function Dashboard() {
 
 const[trending,setTrending] =useState([]);
 const[readlaterdb,setReadlaterdb] =useState([]);
-// const Api=b909d678e82f454a84d8487e1da59893;
+
     useEffect(() => {
-        axios.get("https://newsapi.org/v2/top-headlines?country=in&apikey=53d1cc299b0b4a3e8fe0794de18c2759&page=2")
+        axios.get("https://newsapi.org/v2/everything?q=tesla&from=2022-08-20&sortBy=publishedAt&apiKey=28311e7e3a284eb8bb3e2031603490b4")
         .then((res)=>{
             setTrending(res.data.articles);
         })
@@ -42,9 +41,7 @@ const[readlaterdb,setReadlaterdb] =useState([]);
                         />
                     ))
                     }
-                {/* <div className="col-md-6 mt-4">
-                        <AddContact addContact={saveContact}/>
-                </div> */}
+
                 
         </div>
         </div>
